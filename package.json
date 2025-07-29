@@ -4,8 +4,7 @@
   "description": "A Node.js/Express chatbot service for e-commerce order status, product info, and FAQs.  \r Features authentication, chat with LLM integration, and knowledge base retrieval.",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "test": "jest"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
