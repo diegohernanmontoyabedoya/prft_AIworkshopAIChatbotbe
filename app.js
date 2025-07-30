@@ -10,10 +10,18 @@ const faqRouter = require('./routes/faq');
 
 app.use(express.json());
 
+// ...existing code...
+const allowedOrigins = [
+  'http://localhost:3001',
+  'https://jolly-bay-06f377a03.1.azurestaticapps.net'
+];
 
 // Basic CORS middleware
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:3001');
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin)) {
+    res.header('Access-Control-Allow-Origin', origin);
+  }
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
   
